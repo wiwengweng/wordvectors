@@ -62,7 +62,7 @@ def make_wordvectors():
     
     # Save to file
     with codecs.open('data/{}.tsv'.format(lcode), 'w', 'utf-8') as fout:
-        for i, word in enumerate(model.index2word):
+        for i, word in enumerate(model.wv.index2word):
             fout.write(u"{}\t{}\t{}\n".format(str(i), word.encode('utf8').decode('utf8'),
                                               np.array_str(model[word])
                                               ))
